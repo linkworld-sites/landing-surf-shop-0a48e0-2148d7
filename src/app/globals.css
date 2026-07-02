@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* Blog/Legal post body */
+.post-body h1 { font-size: 2em; font-weight: 700; margin: 0 0 0.75em; }
+.post-body h2 { font-size: 1.5em; font-weight: 600; margin: 1.6em 0 0.6em; }
+.post-body h3 { font-size: 1.25em; font-weight: 600; margin: 1.4em 0 0.5em; }
+.post-body p { margin: 1em 0; line-height: 1.75; }
+.post-body ul, .post-body ol { margin: 1em 0; padding-left: 1.5em; }
+.post-body ul { list-style: disc; }
+.post-body ol { list-style: decimal; }
+.post-body a { text-decoration: underline; }
+.post-body blockquote { border-left: 3px solid currentColor; padding-left: 1em; opacity: 0.8; margin: 1.5em 0; font-style: italic; }
+.post-body img { border-radius: 0.5em; margin: 1.5em 0; width: 100%; }
+.post-body strong { font-weight: 600; }
+.post-body code { font-family: monospace; background: rgba(0,0,0,0.07); padding: 0.1em 0.4em; border-radius: 3px; }
+
+/* Drag cursor for rail */
+.cursor-grab { cursor: grab; }
+.cursor-grab:active { cursor: grabbing; }
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
