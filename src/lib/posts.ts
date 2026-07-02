@@ -14,6 +14,8 @@ export interface Post {
   date: string;
   description: string;
   html: string;
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 const POSTS_DIR = path.join(process.cwd(), "content", "posts");
@@ -57,6 +59,8 @@ export function getPosts(): Post[] {
         date: meta.date || "",
         description: meta.description || "",
         html: marked.parse(body, { async: false }) as string,
+        metaTitle: meta.metaTitle || undefined,
+        metaDescription: meta.metaDescription || undefined,
       });
     } catch {
       continue;

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPost, getPosts } from "@/lib/posts";
@@ -6,6 +7,20 @@ import { Footer } from "@/components/Footer";
 
 export function generateStaticParams() {
   return getPosts().map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPost(slug);
+  if (!post) return {};
+  return {
+    title: post.metaTitle || `${post.title} | Pipeline Surf Co.`,
+    description: post.metaDescription || post.description || undefined,
+  };
 }
 
 export default async function BlogPost({
