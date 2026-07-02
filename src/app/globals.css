@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-ocean: #0077B6;
+  --color-sand: #F9F3E3;
+  --color-sun: #F4A261;
+  --color-forest: #2D6A4F;
+  --color-dark: #1B1B1B;
+}
+
 html.lenis,
 html.lenis body {
   height: auto;
